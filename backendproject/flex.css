@@ -1,0 +1,94 @@
+
+.flex-container {
+	width:100%;
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+} 
+.column{
+	display:flex;
+	height:100px;
+	width:25%;
+	justify-content:center;
+	align-items:center;
+	padding:10px 0;
+	flex-direction:column;
+}
+.f-span{
+	display:flex;
+	flex-direction:row;
+}
+.up{
+	margin-top:-2px;
+}
+.down{
+	margin-top:2px;
+}
+.s-span{
+}
+.container{
+	display:flex;
+	height:50px;
+	width:100%;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+}
+.flex-container2 {
+	width:100%;
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:space-between;
+} 
+.flex-container2 > div{
+	height:400px;
+	display:flex;
+	width:30%;
+	justify-content:center;
+	align-items:center;
+}
+.item1{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.item2{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.item3{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.item4{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.item5{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.item6{
+	background-image:url("img/cats/9.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.flex-container3 {
+	width:100%;
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	justify-content:space-between;
+} 
+.flex-container3 > div{
+	height:400px;
+	display:flex;
+	width:24%;
+	justify-content:center;
+	align-items:center;
+}

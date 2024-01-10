@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="BOOST SERVICE">
+		<meta name="keywords" content="Boost, rank, cs:go">
+		<title> О нас </title>
+		<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css"/>
+		<script src="slider.js"></script>
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+			<div class="container">
+				<div class="row">
+					<div class="column1">
+						<div class="logo">
+							<a href="#">
+								<img src="img/logo.png">
+							</a>
+						</div>
+					</div>
+					<div class="column2">
+						<div class="main-menu">
+							<ul>
+								<li><a href="./index.php">Главная</a></li>
+								<li><a href="./about-us.html">О нас</a></li>
+								<li class="active"><a href="./calc.html">Заказать буст</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="column4">
+                    <div class="breadcrumb-option">
+                        <a href="./index.html">Главная</a>
+                        <span>Калькулятор стоимости</span>
+                    </div>
+                </div>
+                <div class="column4">
+                    <div class="breadcrumb-text">
+                        <h3>Калькулятор стоимости</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <!-- Calculator Section Begin -->
+    <section class="calculator-section" style="padding-top:50px;background-color:#191919;">
+        <div class="container">
+            <div class="row">	
+					<div class="ranks">
+                            <span style="color: #FFFFFF;"><strong> Выберите ваше звание</strong> </span><br/>
+							<select id="ranks1" name="ranks1" style="border-radius: 6px;padding:10px 16px;">
+                                <option data-path="img/ranks/silver-1.png" value="sil1"> Silver I </option>
+                                <option data-path="img/ranks/silver-2.png" value="sil2"> Silver II </option>
+                                <option data-path="img/ranks/silver-3.png" value="sil3"> Silver III </option>
+                                <option data-path="img/ranks/silver-4.png" value="sil4"> Silver IV </option>
+                                <option data-path="img/ranks/silver-elite.png" value="sil5"> Silver V </option>
+                                <option data-path="img/ranks/silver-elite-master.png" value="sil6"> Silver VI </option>
+                                <option data-path="img/ranks/gold-nova-1.png" value="nova1"> Nova I </option>
+                                <option data-path="img/ranks/gold-nova-2.png" value="nova2"> Nova II </option>
+                                <option data-path="img/ranks/gold-nova-3.png" value="nova3"> Nova III </option>
+                                <option data-path="img/ranks/gold-nova-master.png" value="nova4"> Nova IV </option>
+                                <option data-path="img/ranks/master-guardian-1.png" value="mg1"> Master Guardian </option>
+                                <option data-path="img/ranks/master-guardian-2.png" value="mg1"> Master Guardian II </option>
+                                <option data-path="img/ranks/master-guardian-elite.png" value="mge"> Master Guardian Elite </option>
+                                <option data-path="img/ranks/distinguished-master-guardian.png" value="dmg"> Distinguished Master Guardian </option>
+                                <option data-path="img/ranks/legendary-eagle.png" value="le"> Legendary Eagle </option>
+                                <option data-path="img/ranks/legendary-eagle-master.png" value="lem"> Legendary Eagle Master </option>
+                                <option data-path="img/ranks/supreme-master-first-class.png" value="sup"> Supreme Master First Class </option> 
+                            </select>	
+                            <div id="myranksimg"><img src="img/ranks/silver-1.png"/></div>						
+					</div>
+					<div class="ranks">
+                            <span style="color: #FFFFFF;"> <strong>Выберите звание, которое хотите </strong></span><br/>
+                            <select id="ranks2" name="ranks2" style="border-radius: 6px;padding:10px 16px;">
+                                <option data-path="img/ranks/silver-2.png" value="sil2"> Silver II </option>
+                                <option data-path="img/ranks/silver-3.png" value="sil3"> Silver III </option>
+                                <option data-path="img/ranks/silver-4.png" value="sil4"> Silver IV </option>
+                                <option data-path="img/ranks/silver-elite.png" value="sil5"> Silver V </option>
+                                <option data-path="img/ranks/silver-elite-master.png" value="sil6"> Silver VI </option>
+                                <option data-path="img/ranks/gold-nova-1.png" value="nova1"> Nova I </option>
+                                <option data-path="img/ranks/gold-nova-2.png" value="nova2"> Nova II </option>
+                                <option data-path="img/ranks/gold-nova-3.png" value="nova3"> Nova III </option>
+                                <option data-path="img/ranks/gold-nova-master.png" value="nova4"> Nova IV </option>
+                                <option data-path="img/ranks/master-guardian-1.png" value="mg1"> Master Guardian </option>
+                                <option data-path="img/ranks/master-guardian-2.png" value="mg1"> Master Guardian II </option>
+                                <option data-path="img/ranks/master-guardian-elite.png" value="mge"> Master Guardian Elite </option>
+                                <option data-path="img/ranks/distinguished-master-guardian.png" value="dmg"> Distinguished Master Guardian </option>
+                                <option data-path="img/ranks/legendary-eagle.png" value="le"> Legendary Eagle </option>
+                                <option data-path="img/ranks/legendary-eagle-master.png" value="lem"> Legendary Eagle Master </option>
+                                <option data-path="img/ranks/supreme-master-first-class.png" value="sup"> Supreme Master First Class </option>
+                                <option data-path="img/ranks/the-global-elite.png" value="ge"> Global Elite </option>
+                            </select>
+                            <div id="ranksimg"><img src="img/ranks/silver-2.png"/></div>
+					</div>
+			</div>
+			<div class="row">
+			<div class="cost">
+				<span style="float:left;width:11%;border-top-right-radius: 0; border-bottom-right-radius: 0;padding: 6px 12px;font-size: 14px;font-weight: 400;line-height: 1;color: #555;text-align: center;background-color: #eee;border: 1px solid #ccc;border-bottom-left-radius: 4px;border-top-left-radius: 4px;"> Стоимость </span>
+				<input type="text" disabled="disabled" style="float:left;line-height:1;width:78%;background-color:white;text-align:right;background-color: #eee;border: 1px solid #ccc;" value="0"/>
+				<span style="float:left;width:11%;border-top-right-radius: 0; border-bottom-right-radius: 0;padding: 6px 12px;font-size: 14px;font-weight: 400;line-height: 1;color: #555;text-align: center;background-color: #eee;border: 1px solid #ccc;border-bottom-right-radius: 4px;border-top-right-radius: 4px;"> рублей. </span>
+			</div>
+		</div>
+        </div>
+    </section>
+    <!-- Calculator Section End -->
+    <!-- Footer Section Begin -->
+		<section class="footer-section">
+			<div class="container">
+				<div class="row">
+					<div class="column7">
+						<div class="footer-option">
+							<div class="fo-logo">
+								<a href="#">
+									<img src="img/logo.png" height="50px" width="160px"alt="">
+								</a>
+							</div>
+							<ul>
+								<li>Address: 66-66 Road 666 New York</li>
+								<li>Phone: 87777777777</li>
+								<li>Email: ezboost@gmail.com</li>
+							</ul>
+							<div class="fo-social">
+								<a href="#"><span class="iconify" data-icon="ri:steam-fill" data-width="80%" data-height="80%"></span></a>
+								<a href="#"><span class="iconify" data-icon="simple-icons:faceit" data-width="50%" data-height="50%" data-inline="false"></span></a> 
+							</div>
+						</div>
+					</div>
+					<div class="column7">
+						<div class="footer-widget fw-links">
+							<h5>Полезные ссылки</h5>
+							<ul>
+								<li><a href="#">О нас</a></li>
+								<li><a href="#">Заказать буст</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="copyright-text">
+					<p>
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made by Immovable</a>
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- Footer Section End -->
+
+    <script>
+			$(document).ready(function(){
+				$('#ranks2').change(function(){
+				$('#ranksimg').find('img:first').attr('src', $('#ranks2 option:selected').attr('data-path'));});
+				});
+			$(document).ready(function(){
+				$('#ranks1').change(function(){
+				$('#myranksimg').find('img:first').attr('src', $('#ranks1 option:selected').attr('data-path'));});
+				});
+	</script>
+	</body>
+	
+</html>

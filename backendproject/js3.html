@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#message {color: red;
+				      font-size: 20px;
+				      font-family: arial;
+				      }
+			#form{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			flex-direction:column;
+			}
+			#form1{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			flex-direction:column;
+			}
+			input{
+			color:gray;}
+		</style>
+	</head>
+	<body>
+
+    <div id ="form">
+    	<input type="text" id = "inputLogin" value="Enter login" onfocus="if(inputLogin.value=='Enter login')inputLogin.value='';">
+    	<input type="password" id = "inputPassword">
+		<div id="buttons">
+    	<button onclick ="loginFunc()">Login</button>
+    	<button onclick="goToRegPage()">To Register page</button>
+		</div>
+    </div>
+    <p id = "message"></p>
+
+	<script>
+	let id=0;
+	let users = [];
+	let activeUser = null;
+	function goToRegPage(){
+		form.remove();
+		message.innerText = "";
+		let form1 = document.createElement('div');
+		form1.id = 'form1';
+		let inputName = document.createElement('input');
+		inputName.type = 'text';
+		inputName.id = 'inputName';
+		inputName.value = 'Enter name';
+		inputName.onfocus=function(){if(inputName.value=='Enter name')inputName.value="";}
+		let inputLogin = document.createElement('input');
+		inputLogin.type = 'text';
+		inputLogin.id = 'inputLogin';
+		inputLogin.value = 'Enter login';
+		inputLogin.onfocus=function(){if(inputLogin.value=='Enter login')inputLogin.value="";}
+		let inputPassword = document.createElement('input');
+		inputPassword.type = 'password';
+		inputPassword.id = 'inputPassword';
+		let inputPasswordRepeat = document.createElement('input');
+		inputPasswordRepeat.type = 'password';
+		inputPasswordRepeat.id = 'inputPasswordRepeat';
+		let BReg = document.createElement('button');
+		BReg.innerText = 'Register';
+		BReg.onclick = registerFunc;
+		let BLog = document.createElement('button');
+		BLog.innerText = 'Go to Login Page ';
+		BLog.onclick = goToLogPage;
+		let Buttons = document.createElement('div');
+		Buttons.append(BReg);
+		Buttons.append(BLog);
+		form1.append(inputName);
+		form1.append(inputLogin);
+		form1.append(inputPassword);
+		form1.append(inputPasswordRepeat);
+		form1.append(Buttons);
+		document.body.prepend(form1);
+	}
+	function goToLogPage(){
+		form1.remove();
+		message.innerText = "";
+		let form = document.createElement('div');
+		form.id = 'form';
+		let inputLogin = document.createElement('input');
+		inputLogin.type = 'text';
+		inputLogin.id = 'inputLogin';
+		inputLogin.value = 'Enter login';
+		inputLogin.onfocus=function(){if(inputLogin.value=='Enter login')inputLogin.value="";}
+		let inputPassword = document.createElement('input');
+		inputPassword.type = 'password';
+		inputPassword.id = 'inputPassword';
+		let BLog = document.createElement('button');
+		BLog.innerText = 'Login';
+		BLog.onclick = loginFunc;
+		let BReg = document.createElement('button');
+		BReg.innerText = 'To Register Page ';
+		BReg.onclick = goToRegPage;
+		let Buttons = document.createElement('div');
+		Buttons.append(BLog);
+		Buttons.append(BReg);
+		form.append(inputLogin);
+		form.append(inputPassword);
+		form.append(Buttons);
+		document.body.prepend(form);
+	}
+	function registerFunc(){
+		let login;
+		if(inputLogin.value !="Enter login" && inputLogin.value !=""){
+			login = inputLogin.value;
+		}
+		else message.innerText ="Enter all fields";
+		let error=0;
+		for(let i=0;i<users.length;i++){
+			for(let j=0;j<users.length;j++){
+				if(users[j][1]==login){
+					error++;
+				}
+			}
+		}
+		if(error>0)
+			message.innerText = "Попробуйте другой логин";
+		let name = inputName.value;
+		let pass;
+		if(inputPassword.value !=""){
+			pass = inputPassword.value;
+		}
+		let pass1;
+		if(inputPasswordRepeat.value !=""){
+			pass1 = inputPasswordRepeat.value;
+		}
+		if((error==0||users.length==0) && pass==pass1){
+			users.push([id,login,pass,name]);
+			id++;
+			message.innerText = "";
+			}
+		else if(pass!==pass1){
+			message.innerText = 'Пароли не совпадают, попробуйте еще';
+		}
+		console.log(users);
+	}
+	function loginFunc(){
+		let error = true;
+		let userLogin;
+		let userPass;
+		if(activeUser)
+			message.innerText = "Пользователь "+activeUser+" уже вошел в аккаунт.";
+		else {		
+			userLogin = inputLogin.value;
+			userPass = inputPassword.value;
+			for(let i=0;i<users.length;i++){
+				if(users[i][1] == userLogin && users[i][2] == userPass){
+					activeUser = users[i];
+					error = false;
+					break;
+				}
+				else error = true;
+			}
+			
+			if(inputLogin.value==''||inputPassword.value=='')
+				message.innerText = "Введите все данные";
+			else if(error) 
+				message.innerText = "Неправильный логин или пароль.";
+			else {
+				message.innerText = "";
+				goToProfilePage();
+			}
+		}
+		console.log(activeUser);
+	}
+
+	function goToProfilePage(){
+		form.remove();
+		message.innerText = "";
+		let form1 = document.createElement('div');
+		form1.id = 'form1';
+		let profileName = document.createElement('div');
+		profileName.innerText = "Активный пользователь: "+activeUser[3]+".";
+		let BLogout = document.createElement('button');
+		BLogout.innerText = 'Logout';
+		BLogout.onclick = logout;
+		form1.append(profileName);
+		form1.append(BLogout);
+		document.body.prepend(form1);
+	}
+
+	function logout(){
+		activeUser=null;
+		goToLogPage();
+		console.log(activeUser);
+	}
+	</script>
+    </body>
+</html>

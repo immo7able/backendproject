@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title> JS </title>
+		<script src="js.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	</body>
+	<script>
+		let id=0;
+		let users = [];
+		let activeUser = null;
+		while(true){
+			let choice = prompt('press 1: to register\n' + 
+						'press 2: to login\n' + 
+						'press 3: to see active user\n' + 
+						'press 4: to change password\n' + 
+						'press 5: to logout\n' + 
+						'press 6: to exit menu\n');
+
+			if(choice == 1){
+				register();
+				console.log(users);}
+			else
+				if(choice == 2){
+					login();
+					console.log(activeUser);}
+				else
+					if(choice == 3)
+						see();
+					else
+						if(choice == 4)
+							changePassword();
+						else
+							if(choice == 5)
+								logout();
+							else
+								break;
+		}
+	</script>
+</html>

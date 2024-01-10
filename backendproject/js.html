@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script language = "javascript">
+			document.write("<FONT COLOR='red'>Это красный текст</FONT><br/>");
+			document.write("<FONT COLOR='blue'>Это синий текст</FONT><br/>");
+			function dateinbar(){
+				let d = new Date();
+				let y = d.getFullYear(); 
+				let da = d.getDate();
+				let m = d.getMonth() + 1;
+				let t = da + '/' + m + '/' + y;
+				defaultStatus = "Вы прибыли на страницу " + t + ".";
+				return defaultStatus;
+			}
+			document.write("<FONT COLOR='green'>"+dateinbar()+"</FONT><br/>");
+			function fun1() {
+				let rad=document.getElementsByName('radio');
+				for (let i=0;i<rad.length; i++) {
+					if (rad[i].checked) {
+						alert('Выбран '+(i+1)+' radiobutton');
+					}
+				}
+			}
+			function func(val) {
+				alert("The input value has changed. The new value is: " + val);
+			}
+		</script>
+	</head>
+	<body>
+		<A HREF="http://www.newmail.ru" onMouseOver="alert('Бесплатный хостинг'); return true">Ссылка</A>
+		<form id="one">
+			<input name ="login" type="text" placeholder="Имя"></input><br/>
+			<input name ="radio" type="radio"> Учиться </input><br/>
+			<input name="radio" type="radio"> Отдыхать </input><br/>
+			<input type="submit" value="Отправить информацию" onClick="alert('Спасибо за участие в опросе);"><br/>
+			<input type ="button" onclick="fun1()" value="Проверить, какой из элементов выбран"></input><br/>
+			<input type = "text" onFocus="alert('focus');" placeholder="focus"></input><br/>
+			<input type="text" onblur="alert('blur');" placeholder="blur"></input><br/>
+			<input type="text" name="txt" value="Hello" onchange="func(this.value)"><br/>
+		</form>
+	</body>
+</html>
